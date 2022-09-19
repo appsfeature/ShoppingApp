@@ -5,17 +5,16 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Relative_Model_Data {
+public class RelativeModelEntity {
     @SerializedName("user_data")
     @Expose
-    private List<RelativeProduct_Model> userData = null;
+    private List<ContentModel> userData = null;
 
-    public List<RelativeProduct_Model> getUserData() {
+    public List<ContentModel> getUserData() {
         return userData;
     }
 
-    public void setUserData(List<RelativeProduct_Model> userData) {
+    public void setUserData(List<ContentModel> userData) {
         this.userData = userData;
     }
-
 }

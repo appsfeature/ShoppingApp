@@ -12,9 +12,7 @@ import com.appsfeature.global.model.CommonModel;
 import com.appsfeature.global.model.ContentModel;
 import com.appsfeature.global.model.FilterModel;
 import com.appsfeature.global.model.OrderResponseEntity;
-import com.appsfeature.global.model.RelativeProduct_Model;
-import com.appsfeature.global.model.Relative_Model_Data;
-import com.appsfeature.global.model.Relative_Product_Model_res;
+import com.appsfeature.global.model.RelativeModelEntity;
 import com.appsfeature.global.model.UserModel;
 import com.appsfeature.global.util.AppPreference;
 import com.appsfeature.global.util.ListMaintainer;
@@ -83,20 +81,16 @@ public class NetworkManager extends DMNetworkManager {
             }
         });
     }
-    public void getAppRelativeproduct(int subCatId,final DynamicCallback.Listener<Relative_Model_Data> callback) {
+    public void getAppRelativeproduct(int subCatId,final DynamicCallback.Listener<RelativeModelEntity> callback) {
         Map<String, String> params = new HashMap<>();
         params.put("subcategory_id", subCatId + "");
-
         configManager.getData(ApiRequestType.POST_FORM, ApiHost.HOST_MAIN, ApiEndPoint.GET_APP_Relative_Product, params, new NetworkCallback.Response<NetworkModel>() {
             @Override
             public void onComplete(boolean status, NetworkModel data) {
                 try {
                     if (status && !TextUtils.isEmpty(data.getData())) {
-                        Log.d("fsdfsd",data.getData());
-                        Relative_Model_Data dat= data.getData(new TypeToken<Relative_Model_Data>() {
-                        });
-                        if (!dat.getUserData().isEmpty()) {
-
+                        RelativeModelEntity dat= data.getData(RelativeModelEntity.class);
+                        if (dat != null && !dat.getUserData().isEmpty()) {
                             callback.onSuccess(dat);
                         } else {
                             callback.onFailure(new Exception(BaseConstants.NO_DATA));

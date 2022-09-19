@@ -1,12 +1,7 @@
 package com.appsfeature.global.network;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.appsfeature.global.activity.OrderHistoryActivity;
 import com.appsfeature.global.listeners.AttributeType;
 import com.appsfeature.global.listeners.FilterType;
 import com.appsfeature.global.model.AppBaseModel;
@@ -14,9 +9,7 @@ import com.appsfeature.global.model.AttributeModel;
 import com.appsfeature.global.model.CartModel;
 import com.appsfeature.global.model.CategoryModel;
 import com.appsfeature.global.model.FilterModel;
-import com.appsfeature.global.model.RelativeProduct_Model;
-import com.appsfeature.global.model.Relative_Model_Data;
-import com.appsfeature.global.model.Relative_Product_Model_res;
+import com.appsfeature.global.model.RelativeModelEntity;
 import com.appsfeature.global.model.SizeModel;
 import com.appsfeature.global.model.ContentModel;
 import com.appsfeature.global.model.ProductDetail;
@@ -31,7 +24,6 @@ import com.dynamic.util.DMBaseSorting;
 import com.google.gson.reflect.TypeToken;
 import com.helper.callback.Response;
 import com.helper.task.TaskRunner;
-import com.helper.util.BaseUtil;
 import com.helper.util.GsonParser;
 
 import java.util.ArrayList;
@@ -103,10 +95,10 @@ public class AppDataManager extends DMBaseSorting {
             }
         });
     }
-    public void getAppRelativeProduct(int seasonId, DynamicCallback.Listener<Relative_Model_Data> callback) {
-        networkManager.getAppRelativeproduct( seasonId, new DynamicCallback.Listener<Relative_Model_Data>() {
+    public void getAppRelativeProduct(int seasonId, DynamicCallback.Listener<RelativeModelEntity> callback) {
+        networkManager.getAppRelativeproduct( seasonId, new DynamicCallback.Listener<RelativeModelEntity>() {
             @Override
-            public void onSuccess(Relative_Model_Data response) {
+            public void onSuccess(RelativeModelEntity response) {
 
                 callback.onSuccess(response);
             }

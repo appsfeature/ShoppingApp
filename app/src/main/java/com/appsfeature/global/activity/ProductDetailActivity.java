@@ -25,8 +25,7 @@ import com.appsfeature.global.model.CategoryModel;
 import com.appsfeature.global.model.ContentModel;
 import com.appsfeature.global.model.PresenterModel;
 import com.appsfeature.global.model.ProductDetail;
-import com.appsfeature.global.model.RelativeProduct_Model;
-import com.appsfeature.global.model.Relative_Model_Data;
+import com.appsfeature.global.model.RelativeModelEntity;
 import com.appsfeature.global.model.SizeModel;
 import com.appsfeature.global.network.AppDataManager;
 import com.appsfeature.global.util.AppCartMaintainer;
@@ -58,7 +57,7 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
     private ContentModel mContentDetail;
     private TextView tvProductCode;
     int mCurrentPage = 1;
-    List<RelativeProduct_Model>rel_data;
+    List<ContentModel> mListRelative;
     RecyclerView relative_recy;
     RelativeProductAdapter adapter;
     @Override
@@ -86,12 +85,12 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
         (findViewById(R.id.btn_add_to_cart)).setOnClickListener(this);
         (findViewById(R.id.btn_buy_now)).setOnClickListener(this);
         (findViewById(R.id.ll_size_chart)).setOnClickListener(this);
-        rel_data=new ArrayList<>();
+        mListRelative = new ArrayList<>();
         relative_recy.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false));
 
-        adapter = new RelativeProductAdapter(rel_data, ProductDetailActivity.this, new Response.OnClickListener<RelativeProduct_Model>() {
+        adapter = new RelativeProductAdapter(mListRelative, ProductDetailActivity.this, new Response.OnClickListener<ContentModel>() {
             @Override
-            public void onItemClicked(View view, RelativeProduct_Model item) {
+            public void onItemClicked(View view, ContentModel item) {
                 openItemOnClicked(view, item);
             }
         });
@@ -304,18 +303,18 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
 
     private void getrela() {
         Log.d("dasd",property.getCatId()+"");
-        AppDataManager.get(ProductDetailActivity.this).getAppRelativeProduct(property.getCatId(),new DynamicCallback.Listener<Relative_Model_Data>() {
+        AppDataManager.get(ProductDetailActivity.this).getAppRelativeProduct(property.getCatId(),new DynamicCallback.Listener<RelativeModelEntity>() {
             @Override
-            public void onSuccess(Relative_Model_Data response) {
+            public void onSuccess(RelativeModelEntity response) {
                // rel_data=new ArrayList<>();
                 Log.d("sfsdf",response.getUserData().toString());
-                rel_data.addAll(response.getUserData());
+                mListRelative.addAll(response.getUserData());
                 adapter.notifyDataSetChanged();
 
             }
 
             @Override
-            public void onValidate(Relative_Model_Data list, Response.Status<Relative_Model_Data> callback) {
+            public void onValidate(RelativeModelEntity list, Response.Status<RelativeModelEntity> callback) {
                 DynamicCallback.Listener.super.onValidate(list, callback);
             }
 
@@ -336,7 +335,7 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
             }
         });
     }
-    private void openItemOnClicked(View view, RelativeProduct_Model item) {
+    private void openItemOnClicked(View view, ContentModel item) {
         ClassUtil.openActivityRelative(ProductDetailActivity.this, property, item);
     }
 

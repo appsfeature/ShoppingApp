@@ -28,7 +28,6 @@ import com.appsfeature.global.model.CategoryModel;
 import com.appsfeature.global.model.ContentModel;
 import com.appsfeature.global.model.ExtraProperty;
 import com.appsfeature.global.model.OtherProperty;
-import com.appsfeature.global.model.RelativeProduct_Model;
 import com.appsfeature.global.model.UserModel;
 import com.appsfeature.global.video.util.YTUtility;
 import com.browser.BrowserSdk;
@@ -255,9 +254,9 @@ public class ClassUtil {
         activity.startActivity(new Intent(activity, ProductDetailActivity.class)
                 .putExtra(AppConstant.CATEGORY_PROPERTY, extraProperty));
     }
-    public static void openActivityRelative(Activity activity, ExtraProperty property, RelativeProduct_Model item) {
+    public static void openActivityRelative(Activity activity, ExtraProperty property, ContentModel item) {
         ExtraProperty extraProperty = property.getClone();
-        extraProperty.setSub_cat(Integer.parseInt(item.getId()));
+        extraProperty.setSub_cat(item.getId());
 
         //extraProperty.setContentModel(item);
         activity.startActivity(new Intent(activity, ProductDetailActivity.class)

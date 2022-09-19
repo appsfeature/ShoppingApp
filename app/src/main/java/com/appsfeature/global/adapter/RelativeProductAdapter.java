@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.appsfeature.global.R;
-import com.appsfeature.global.model.RelativeProduct_Model;
+import com.appsfeature.global.model.ContentModel;
 import com.helper.callback.Response;
 import com.helper.util.BaseUtil;
 import com.squareup.picasso.Picasso;
@@ -28,13 +28,11 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class RelativeProductAdapter extends RecyclerView.Adapter<RelativeProductAdapter.Object> implements Filterable {
-    List<RelativeProduct_Model>data;
+    List<ContentModel>data;
     Context context;
-    private final Response.OnClickListener<RelativeProduct_Model> mCallback;
+    private final Response.OnClickListener<ContentModel> mCallback;
 
-
-
-    public RelativeProductAdapter(List<RelativeProduct_Model> data, Context context, Response.OnClickListener<RelativeProduct_Model> mCallback) {
+    public RelativeProductAdapter(List<ContentModel> data, Context context, Response.OnClickListener<ContentModel> mCallback) {
         this.data = data;
         this.context = context;
         this.mCallback = mCallback;
@@ -59,7 +57,7 @@ public class RelativeProductAdapter extends RecyclerView.Adapter<RelativeProduct
             holder.iv_icon.setImageResource(placeHolder);
         }
         holder.tv_title.setText(data.get(position).getTitle());
-        holder.tv_price.setText(getPrice(Integer.parseInt(data.get(position).getPrice()),Integer.parseInt( data.get(position).getDiscount_price())));
+        holder.tv_price.setText(getPrice(data.get(position).getPrice(), data.get(position).getDiscountPrice()));
     }
 
     @Override
