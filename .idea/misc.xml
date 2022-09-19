@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/drawable/bg_button_submit.xml" value="0.158" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/drawable/bg_circle_fail.xml" value="0.158" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/drawable/bg_circle_success.xml" value="0.158" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/drawable/bg_progress_white.xml" value="0.158" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/drawable/bg_shape_spinner.xml" value="0.158" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/drawable/bg_shape_squire.xml" value="0.158" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/drawable/bg_shape_squire_trans.xml" value="0.158" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_booking_success.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_cart.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_list.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_main.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_new_address.xml" value="0.25" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_order_summary.xml" value="0.27395833333333336" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_product_detail.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_profile.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/activity_user_preferences.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/dialog_address_list.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/dialog_email_id.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/dialog_filter_home.xml" value="0.25" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/dialog_filter_list.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/dialog_quantity.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/slot_cart_view.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/slot_item_address.xml" value="0.4462890625" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/slot_item_notification.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/slot_item_orders.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/layout/slot_item_selector.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/menu/menu_main_drawer.xml" value="0.275" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/main/res/menu/menu_profile.xml" value="0.2247863247863248" />
+        <entry key="..\:/Developer/appsfeature/ShoppingApp2/app/src/saintg/res/menu/menu_main_drawer.xml" value="0.275" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

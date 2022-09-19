@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="action_bar_height">58dip</dimen>
+    <dimen name="action_bar_height_video">30dp</dimen>
+
+    <dimen name="dmCardCornerRadiusApp">0dp</dimen>
+    <dimen name="dmCardCornerRadiusDialog">0dp</dimen>
+    <dimen name="dmCardElevationApp">0dp</dimen>
+</resources>

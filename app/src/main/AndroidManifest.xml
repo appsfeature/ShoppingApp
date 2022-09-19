@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.appsfeature.global">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name="com.appsfeature.global.AppApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/ActivityTheme.NoActionBar">
+        <activity android:name="com.appsfeature.global.activity.SplashScreen"
+            android:exported="true"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:host="@string/url_public_domain_host_manifest"
+                    android:scheme="https"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.appsfeature.global.activity.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <activity android:name=".activity.HtmlViewerActivity"
+            android:theme="@style/ActivityTheme.ActionBar"
+            android:exported="false"/>
+
+        <activity android:name=".activity.NewAddressActivity"
+            android:theme="@style/FormTheme.MaterialComponents.ActionBar"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"/>
+
+        <activity
+            android:name=".video.YTPlayerActivity"
+            android:theme="@style/ActivityTheme.Transparent"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"/>
+
+        <activity android:name="com.appsfeature.global.login.LoginActivity"
+            android:theme="@style/ActivityTheme.NoActionBar"
+            android:exported="false"/>
+
+        <activity android:name=".activity.NotificationActivity"
+            android:theme="@style/ActivityTheme.ActionBar"
+            android:label="Notification"
+            android:exported="false"/>
+
+        <activity android:name=".activity.CartActivity"
+            android:theme="@style/ActivityTheme.ActionBar.Material"
+            android:label="Notification"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"
+            android:exported="true" />
+
+        <activity android:name=".activity.ProductListActivity"
+            android:theme="@style/ActivityTheme.ActionBar"
+            android:exported="false" />
+        <activity android:name=".activity.ProductDetailActivity"
+            android:theme="@style/ActivityTheme.ActionBar"
+            android:exported="false" />
+        <activity android:name=".activity.OrderSummaryActivity"
+            android:theme="@style/ActivityTheme.ActionBar"
+            android:exported="false" />
+        <activity android:name=".activity.UserPreferenceActivity"
+            android:theme="@style/ActivityTheme.NoActionBar"
+            android:label="Preferences"/>
+        <activity android:name=".activity.BookingSuccessActivity"
+            android:theme="@style/ActivityTheme.NoActionBar"
+            android:label="BookingSuccess"/>
+        <activity android:name=".activity.OrderHistoryActivity"
+            android:theme="@style/ActivityTheme.ActionBar"
+            android:exported="false" />
+        <activity android:name=".activity.ProfileActivity"
+            android:theme="@style/FormTheme.MaterialComponents.ActionBar"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
+
+        <!--        <meta-data-->
+<!--            android:name="com.onesignal.NotificationOpened.DEFAULT"-->
+<!--            android:value="DISABLE" />-->
+
+        <meta-data android:name="com.onesignal.NotificationServiceExtension"
+            android:value="com.appsfeature.global.onesignal.OneSignalNotificationReceivedHandler" />
+
+        <meta-data android:name="com.onesignal.suppressLaunchURLs" android:value="true"/>
+
+        <meta-data
+            android:name = "com.appsfeature.onesignal"
+            android:value = "${onesignal_app_id}"/>
+
+        <meta-data
+            android:name = "com.appsfeature.apikey"
+            android:value = "${MAPS_API_KEY}"/>
+
+
+<!--        <receiver android:name="com.razorpay.RzpTokenReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="rzp.device_token.share" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+
+<!--        <activity-->
+<!--            android:name="com.razorpay.CheckoutActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+<!--            android:theme="@style/CheckoutTheme"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <data-->
+<!--                    android:host="rzp.io"-->
+<!--                    android:scheme="io.rzp" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+    </application>
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+
+    <queries>
+        <!-- List of apps which you want to support for Intent pay -->
+        <package android:name="com.google.android.apps.nbu.paisa.user" />
+        <package android:name="com.phonepe.app"/>
+        <!--
+             Specific intents you query for,
+             eg: for a custom share UI
+        -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+        </intent>
+    </queries>
+
+</manifest>

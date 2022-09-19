@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_nav_profile"
+                android:title="Login" />
+            <item
+                android:id="@+id/nav_orders"
+                android:icon="@drawable/ic_menu_orders"
+                android:title="My Orders" />
+            <item
+                android:id="@+id/nav_women"
+                android:icon="@drawable/ic_menu_female"
+                android:title="Women's Footwear" />
+            <item
+                android:id="@+id/nav_mens"
+                android:icon="@drawable/ic_menu_male"
+                android:title="Men's Footwear" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_insta"
+            android:icon="@drawable/ic_menu_insta"
+            android:title="The Gram" />
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/ic_menu_privacy"
+            android:title="Privacy Policy" />
+        <item
+            android:id="@+id/nav_blog"
+            android:icon="@drawable/ic_menu_blog"
+            android:title="Blogs" />
+        <item
+            android:id="@+id/nav_partner_with"
+            android:icon="@drawable/ic_menu_partner"
+            android:title="Partner with" />
+        <item
+            android:id="@+id/nav_blog_men"
+            android:icon="@drawable/ic_menu_blog_men"
+            android:title="Celebrity Spotted Men" />
+        <item
+            android:id="@+id/nav_blog_women"
+            android:icon="@drawable/ic_menu_blog_women"
+            android:title="Celebrity Spotted Women" />
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_menu_offer"
+            android:title="Weekly Offer" />
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_more_apps"
+            android:icon="@drawable/ic_nav_more_apps"
+            android:title="More Apps" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share" />
+        <item
+            android:id="@+id/nav_rate_us"
+            android:icon="@drawable/ic_rate_us_menu"
+            android:title="Rate us" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:visible="false"
+            android:title="Logout" />
+    </group>
+
+</menu>
