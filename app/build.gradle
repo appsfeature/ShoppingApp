@@ -26,8 +26,8 @@ android {
 //        }
         saintg {
             applicationId "com.saintg.androidapp"
-            versionCode 212
-            versionName "2.0.12"
+            versionCode 213
+            versionName "2.0.13"
             manifestPlaceholders = [MAPS_API_KEY: project.properties['api.key.saintg'], onesignal_app_id: "06e270e1-350b-437e-89b0-4e60da7b61f0", onesignal_google_project_number: "REMOTE"]
         }
     }
@@ -93,7 +93,7 @@ dependencies {
 
     implementation 'com.github.appsfeature:progress-button:1.2'
     implementation "com.github.appsfeature:login-sdk:1.9"
-    implementation 'com.github.appsfeature:browser:2.8'
+    implementation 'com.github.appsfeature:browser:2.9'
 
     implementation "org.bitbucket.android-dennislabs:helper:$rootProject.ext.helper_version"
     implementation 'com.github.appsfeature:dynamic-module:1.2-alpha08'

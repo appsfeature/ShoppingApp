@@ -28,11 +28,11 @@ import com.appsfeature.global.model.FilterModel;
 import com.appsfeature.global.model.UserModel;
 import com.appsfeature.global.network.AppDataManager;
 import com.appsfeature.global.util.AppPreference;
+import com.appsfeature.global.util.AppSelectionSwitch;
 import com.appsfeature.global.util.ClassUtil;
 import com.dynamic.listeners.DynamicCallback;
 import com.helper.callback.Response;
 import com.helper.util.BaseUtil;
-import com.helper.widget.SelectionSwitch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,14 +51,27 @@ public class AppDialog {
 
             View filterFemale = dialog.findViewById(R.id.ll_filter_female);
             View filterMale = dialog.findViewById(R.id.ll_filter_male);
-            SelectionSwitch swGender = new SelectionSwitch(filterFemale, filterMale)
+            AppSelectionSwitch swGender = new AppSelectionSwitch(filterFemale, filterMale)
                     .setSelected(AppPreference.getGender() == GenderType.TYPE_GIRL);
 
             View filterWinter = dialog.findViewById(R.id.ll_filter_winter);
             View filterSummer = dialog.findViewById(R.id.ll_filter_summer);
-            SelectionSwitch swSeason = new SelectionSwitch(filterWinter, filterSummer)
+            AppSelectionSwitch swSeason = new AppSelectionSwitch(filterWinter, filterSummer)
                     .setSelected(AppPreference.getSeason() == SeasonType.TYPE_WINTER);
 
+            swGender.addSwitchChangeListener(new AppSelectionSwitch.Listener() {
+                @Override
+                public void onSwitchChanged(boolean isFirstChecked) {
+                    dialog.getWindow().getDecorView().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            AppPreference.setGender(swGender.isFirstSelected() ? GenderType.TYPE_GIRL : GenderType.TYPE_BOY);
+                            dismissDialog(dialog);
+                            callback.onSuccess(true);
+                        }
+                    });
+                }
+            });
             dialog.findViewById(R.id.btn_submit).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

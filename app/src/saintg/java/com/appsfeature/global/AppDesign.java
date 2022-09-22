@@ -79,7 +79,8 @@ public class AppDesign {
                     AppPreference.setGender(GenderType.TYPE_BOY);
                     reloadHomeData();
                 } else if (itemId == R.id.nav_insta) {
-                    openLink(activity, "Instagram", AppConstant.URL_INSTAGRAM);
+//                    openLink(activity, "Instagram", AppConstant.URL_INSTAGRAM);
+                    BaseUtil.openLinkInBrowserChrome(activity, AppConstant.URL_INSTAGRAM);
                 } else if (itemId == R.id.nav_privacy) {
                     openLink(activity, "Privacy Policy", AppConstant.URL_PRIVACY);
                 } else if (itemId == R.id.nav_blog) {
@@ -92,6 +93,12 @@ public class AppDesign {
                     openLink(activity, "Celebrity Spotted Women", AppConstant.URL_CELEBRITY_SPOTTED_WOMEN);
                 } else if (itemId == R.id.nav_offers) {
                     openLink(activity, "Weekly Offer", AppConstant.URL_WEEK_OFFER);
+                } else if (itemId == R.id.nav_return_policy) {
+                    openLink(activity, "Shipping and return policy", AppConstant.URL_RETURN_POLICY);
+                } else if (itemId == R.id.nav_contact) {
+                    openLink(activity, "Contact", AppConstant.URL_CONTACT_US);
+                } else if (itemId == R.id.nav_about) {
+                    openLink(activity, "About", AppConstant.URL_ABOUT_US);
                 } else if (itemId == R.id.nav_share) {
                     SupportUtil.share(activity, "");
                 } else if (itemId == R.id.nav_rate_us) {
@@ -110,7 +117,7 @@ public class AppDesign {
     }
 
     private void openLink(Activity activity, String title, String url) {
-        BaseUtil.openLinkInBrowserChrome(activity, url);
+        BaseUtil.openLinkInAppBrowser(activity, title, url);
     }
 
     private void setupBottomNavigation(View rootView) {

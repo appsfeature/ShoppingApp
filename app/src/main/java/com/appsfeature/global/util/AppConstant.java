@@ -25,4 +25,7 @@ public interface AppConstant {
     String URL_CELEBRITY_SPOTTED_MEN = "https://katyayanschool.com/codeigniter-ecommerce/web/man";
     String URL_CELEBRITY_SPOTTED_WOMEN = "https://katyayanschool.com/codeigniter-ecommerce/web/woman";
     String URL_WEEK_OFFER = "https://katyayanschool.com/codeigniter-ecommerce/web/week_offer";
+    String URL_RETURN_POLICY = "https://katyayanschool.com/codeigniter-ecommerce/web/shipping";
+    String URL_CONTACT_US = "https://katyayanschool.com/codeigniter-ecommerce/web/contact";
+    String URL_ABOUT_US = "https://katyayanschool.com/codeigniter-ecommerce/web/about";
 }
