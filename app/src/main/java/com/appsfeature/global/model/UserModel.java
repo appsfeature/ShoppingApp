@@ -45,7 +45,7 @@ public class UserModel implements Serializable {
     public Object state;
     @SerializedName("country")
     @Expose
-    public int country;
+    public Object country;
     @SerializedName("is_active")
     @Expose
     public int isActive;
@@ -146,11 +146,11 @@ public class UserModel implements Serializable {
         this.state = state;
     }
 
-    public int getCountry() {
+    public Object getCountry() {
         return country;
     }
 
-    public void setCountry(int country) {
+    public void setCountry(Object country) {
         this.country = country;
     }
 

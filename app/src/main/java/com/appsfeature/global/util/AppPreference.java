@@ -97,7 +97,11 @@ public class AppPreference extends BasePrefUtil {
     }
 
     public static String getCustomerId() {
-        return "1";
+        if(getProfileModel() != null) {
+            return getProfileModel().getId() + "";
+        }else {
+            return "";
+        }
     }
 
     public static void setShippingAddress(UserModel response) {

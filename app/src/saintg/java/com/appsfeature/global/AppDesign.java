@@ -1,6 +1,7 @@
 package com.appsfeature.global;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.appsfeature.global.activity.SplashScreen;
 import com.appsfeature.global.fragment.HomeFragment;
 import com.appsfeature.global.listeners.GenderType;
 import com.appsfeature.global.model.UserModel;
@@ -107,8 +109,8 @@ public class AppDesign {
                     SocialUtil.moreApps(activity, AppConstant.DEVELOPER_NAME);
                 } else if (itemId == R.id.nav_logout) {
                     AppPreference.clearPreferences(activity);
+                    activity.startActivity(new Intent(activity, SplashScreen.class));
                     activity.finish();
-                    ClassUtil.openHomeActivity(activity);
                 }
                 return true;
             }

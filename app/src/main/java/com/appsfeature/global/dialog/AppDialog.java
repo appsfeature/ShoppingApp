@@ -353,7 +353,7 @@ public class AppDialog {
 
                 @Override
                 public void onFailure(Exception e) {
-                    if (recyclerView.getAdapter() == null) {
+                    if(mList.size() == 0) {
                         BaseUtil.showNoData(llNoData, View.VISIBLE);
                     }
                 }
